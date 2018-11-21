@@ -33,7 +33,7 @@ open class CargoBuildTask : DefaultTask() {
             copy { spec ->
                 if (toolchain.target != null) {
                     spec.from(File(project.projectDir, "${targetDirectory}/${toolchain.target}/${profile}"))
-                    spec.into(File(buildDir, "rustJniLibs/${toolchain.folder}"))
+                    spec.into(File(project.projectDir, "src/main/jniLibs/${toolchain.folder}"))
                 } else {
                     spec.from(File(project.projectDir, "${targetDirectory}/${profile}"))
                     spec.into(File(buildDir, "rustResources/${defaultToolchainBuildPrefixDir}"))
